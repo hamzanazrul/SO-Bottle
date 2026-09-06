@@ -1,0 +1,311 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 900" width="100%" height="100%">
+  <defs>
+    <!-- Linear & Radial Gradients for Plastic Realism -->
+    <linearGradient id="plasticBodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cae8fa" stop-opacity="0.85"/>
+      <stop offset="15%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#99d5f7" stop-opacity="0.5"/>
+      <stop offset="65%" stop-color="#5bb4ea" stop-opacity="0.4"/>
+      <stop offset="85%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#80c8f3" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Water Liquid Gradient -->
+    <linearGradient id="waterLiquidGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00a8ff" stop-opacity="0.35"/>
+      <stop offset="25%" stop-color="#48dbfb" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#0abde3" stop-opacity="0.35"/>
+      <stop offset="75%" stop-color="#00d2d3" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0084d6" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- Gloss Highlight Gradient -->
+    <linearGradient id="specularGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Shadow for Depth -->
+    <filter id="softShadow" x="-20%" y="-10%" width="140%" height="120%">
+      <feDropShadow dx="0" dy="18" stdDeviation="15" flood-color="#006699" flood-opacity="0.25" />
+    </filter>
+
+    <!-- Label Gradient -->
+    <linearGradient id="defaultLabelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1e36" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#043259" stop-opacity="0.98"/>
+    </linearGradient>
+
+    <!-- Cap Highlights -->
+    <linearGradient id="capHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#000000" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ground Drop Shadow -->
+  <ellipse cx="200" cy="855" rx="100" ry="18" fill="#003d66" opacity="0.25" filter="blur(8px)"/>
+
+  <!-- Bottle Group -->
+  <g id="full-bottle" filter="url(#softShadow)">
+
+    <!-- ================= BOTTLE BODY (PLASTIC & WATER) ================= -->
+    <path id="bottle-silhouette" d="
+      M 162 100
+      L 238 100
+      L 242 125
+      L 248 135
+      C 275 160, 290 200, 290 245
+      L 290 420
+      C 285 435, 285 455, 290 470
+      L 290 730
+      C 290 770, 275 805, 255 818
+      C 238 828, 222 830, 200 830
+      C 178 830, 162 828, 145 818
+      C 125 805, 110 770, 110 730
+      L 110 470
+      C 115 455, 115 435, 110 420
+      L 110 245
+      C 110 200, 125 160, 152 135
+      L 158 125
+      Z"
+      fill="url(#plasticBodyGrad)"
+      stroke="rgba(255,255,255,0.7)"
+      stroke-width="2"
+    />
+
+    <!-- Inner Pure Water Liquid -->
+    <path d="
+      M 154 180
+      Q 200 195, 246 180
+      C 272 205, 286 240, 286 280
+      L 286 420
+      C 282 435, 282 455, 286 470
+      L 286 726
+      C 286 764, 272 798, 252 812
+      C 236 822, 220 824, 200 824
+      C 180 824, 164 822, 148 812
+      C 128 798, 114 764, 114 726
+      L 114 470
+      C 118 455, 118 435, 114 420
+      L 114 280
+      C 114 240, 128 205, 154 180
+      Z"
+      fill="url(#waterLiquidGrad)"
+    />
+
+    <!-- Water Surface Wave / Meniscus at Top -->
+    <ellipse cx="200" cy="182" rx="46" ry="6" fill="#7bed9f" opacity="0.3" />
+    <path d="M 154 182 Q 177 178, 200 182 T 246 182" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.8" />
+
+    <!-- Ergonomic Ribbed Contours -->
+    <g opacity="0.4" stroke="#ffffff" stroke-width="2" fill="none">
+      <path d="M 116 285 Q 200 298 284 285" />
+      <path d="M 114 315 Q 200 328 286 315" />
+      <path d="M 112 345 Q 200 358 288 345" />
+
+      <path d="M 112 680 Q 200 695 288 680" />
+      <path d="M 114 710 Q 200 725 286 710" />
+      <path d="M 118 740 Q 200 755 282 740" />
+    </g>
+
+    <!-- Bottom Ice-Base Ribs -->
+    <path d="M 150 805 Q 200 820 250 805" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.7"/>
+    <path d="M 165 818 Q 200 828 235 818" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.5"/>
+
+    <!-- ================= DYNAMIC CUSTOM LABEL AREA ================= -->
+    <g id="bottle-label-container">
+      <!-- Label Base / Wrap around bottle -->
+      <path id="label-bg" d="
+        M 110 405
+        C 140 415, 260 415, 290 405
+        L 290 625
+        C 260 635, 140 635, 110 625
+        Z"
+        fill="url(#defaultLabelGrad)"
+        stroke="rgba(255,255,255,0.4)"
+        stroke-width="1.5"
+      />
+
+      <!-- Subtle Label Texture / Border Line Accent -->
+      <path d="M 118 418 C 145 426, 255 426, 282 418" stroke="#00d2ff" stroke-width="1.5" fill="none" opacity="0.8" />
+      <path d="M 118 612 C 145 620, 255 620, 282 612" stroke="#00d2ff" stroke-width="1.5" fill="none" opacity="0.8" />
+
+      <!-- Label Brand Badge / Icon -->
+      <g id="label-brand-group" transform="translate(200, 445)">
+        <circle cx="0" cy="0" r="14" fill="#00d2ff" opacity="0.2"/>
+        <path d="M 0 -8 C 4 -2, 6 2, 6 5 C 6 8.5, 3.3 11, 0 11 C -3.3 11, -6 8.5, -6 5 C -6 2, -4 -2, 0 -8 Z" fill="#00d2ff" />
+      </g>
+
+      <!-- Label Subtitle / Brand Header -->
+      <text id="label-brand-sub" x="200" y="475"
+            font-family="'Plus Jakarta Sans', 'Inter', sans-serif"
+            font-size="11"
+            font-weight="700"
+            letter-spacing="3"
+            fill="#70d6ff"
+            text-anchor="middle">SO BOTTOL</text>
+
+      <!-- CUSTOM USER NAME / TEXT (Dynamic in JS) -->
+      <text id="label-custom-text" x="200" y="525"
+            font-family="'Syne', 'Outfit', sans-serif"
+            font-size="28"
+            font-weight="800"
+            letter-spacing="1.5"
+            fill="#ffffff"
+            text-anchor="middle">YOUR NAME</text>
+
+      <!-- CUSTOM USER SLOGAN / SUBTEXT (Dynamic in JS) -->
+      <text id="label-custom-slogan" x="200" y="555"
+            font-family="'Plus Jakarta Sans', sans-serif"
+            font-size="12"
+            font-weight="500"
+            letter-spacing="1.2"
+            fill="#a6e3e9"
+            text-anchor="middle">STAY PURE • STAY HYDRATED</text>
+
+      <!-- Label Specs / Purity Badge -->
+      <text x="200" y="585"
+            font-family="'Plus Jakarta Sans', monospace"
+            font-size="10"
+            font-weight="600"
+            letter-spacing="2"
+            fill="rgba(255,255,255,0.6)"
+            text-anchor="middle">750 ML • 100% BPA FREE • pH 7.8</text>
+
+      <!-- Label Curved Gloss Mask Overlay -->
+      <path d="
+        M 110 405
+        C 140 415, 260 415, 290 405
+        L 290 625
+        C 260 635, 140 635, 110 625
+        Z"
+        fill="url(#specularGlow)"
+        opacity="0.25"
+        style="mix-blend-mode: overlay; pointer-events: none;"
+      />
+    </g>
+
+    <!-- ================= BOTTLE GLOSS & HIGHLIGHTS (FOREGROUND) ================= -->
+    <path d="
+      M 124 150
+      L 118 245
+      L 118 420
+      L 120 470
+      L 118 730
+      C 118 755, 128 780, 138 795
+      L 132 790
+      C 124 775, 122 750, 122 730
+      L 124 470
+      L 122 420
+      L 122 245
+      Z"
+      fill="#ffffff"
+      opacity="0.7"
+      filter="blur(1px)"
+    />
+
+    <path d="
+      M 148 145
+      C 138 210, 138 380, 138 420
+      L 138 625
+      C 138 690, 142 760, 156 800
+      C 152 760, 148 690, 148 625
+      L 148 420
+      C 148 380, 148 210, 158 145
+      Z"
+      fill="#ffffff"
+      opacity="0.45"
+      filter="blur(2px)"
+    />
+
+    <path d="
+      M 276 150
+      L 282 245
+      L 282 420
+      L 280 470
+      L 282 730
+      C 282 755, 272 780, 262 795
+      L 268 790
+      C 276 775, 278 750, 278 730
+      L 276 470
+      L 278 420
+      L 278 245
+      Z"
+      fill="#ffffff"
+      opacity="0.55"
+      filter="blur(1.5px)"
+    />
+
+    <!-- ================= CUSTOMIZABLE BOTTLE CAP ================= -->
+    <g id="bottle-cap-group">
+      <rect id="bottle-neck-ring" x="156" y="86" width="88" height="12" rx="4" fill="#00a8ff" />
+      <rect x="156" y="86" width="88" height="12" rx="4" fill="url(#capHighlight)" />
+
+      <path id="bottle-cap" d="
+        M 158 40
+        L 242 40
+        C 246 40, 248 43, 248 47
+        L 246 84
+        C 246 86, 244 87, 242 87
+        L 158 87
+        C 156 87, 154 86, 154 84
+        L 152 47
+        C 152 43, 154 40, 158 40
+        Z"
+        fill="#00a8ff"
+        filter="drop-shadow(0 4px 6px rgba(0,0,0,0.25))"
+      />
+
+      <!-- Cap Ribbed Ridges -->
+      <g opacity="0.3" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round">
+        <line x1="164" y1="46" x2="164" y2="81" />
+        <line x1="171" y1="46" x2="171" y2="81" />
+        <line x1="178" y1="46" x2="178" y2="81" />
+        <line x1="185" y1="46" x2="185" y2="81" />
+        <line x1="192" y1="46" x2="192" y2="81" />
+        <line x1="200" y1="46" x2="200" y2="81" />
+        <line x1="208" y1="46" x2="208" y2="81" />
+        <line x1="215" y1="46" x2="215" y2="81" />
+        <line x1="222" y1="46" x2="222" y2="81" />
+        <line x1="229" y1="46" x2="229" y2="81" />
+        <line x1="236" y1="46" x2="236" y2="81" />
+      </g>
+
+      <path d="
+        M 158 40
+        L 242 40
+        C 246 40, 248 43, 248 47
+        L 246 84
+        C 246 86, 244 87, 242 87
+        L 158 87
+        C 156 87, 154 86, 154 84
+        L 152 47
+        C 152 43, 154 40, 158 40
+        Z"
+        fill="url(#capHighlight)"
+        style="mix-blend-mode: overlay; pointer-events: none;"
+      />
+
+      <ellipse cx="200" cy="42" rx="42" ry="4" fill="#ffffff" opacity="0.6" />
+    </g>
+
+    <!-- Droplets -->
+    <g id="droplets" opacity="0.8">
+      <ellipse cx="140" cy="360" rx="3.5" ry="5" fill="#ffffff" opacity="0.85"/>
+      <ellipse cx="141" cy="361" rx="1.5" ry="2" fill="#0099e6" opacity="0.4"/>
+      <ellipse cx="260" cy="320" rx="4" ry="6" fill="#ffffff" opacity="0.85"/>
+      <ellipse cx="261" cy="321" rx="2" ry="2.5" fill="#0099e6" opacity="0.4"/>
+      <ellipse cx="135" cy="650" rx="3" ry="4.5" fill="#ffffff" opacity="0.8"/>
+      <ellipse cx="265" cy="670" rx="4.5" ry="6.5" fill="#ffffff" opacity="0.9"/>
+      <ellipse cx="266" cy="671" rx="2" ry="3" fill="#0099e6" opacity="0.4"/>
+      <ellipse cx="145" cy="760" rx="4" ry="5.5" fill="#ffffff" opacity="0.85"/>
+      <ellipse cx="250" cy="750" rx="3.5" ry="5" fill="#ffffff" opacity="0.8"/>
+    </g>
+
+  </g>
+</svg>
