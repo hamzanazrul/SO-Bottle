@@ -597,6 +597,8 @@ body {
   border-top: 1px solid rgba(0, 168, 255, 0.15);
   border-bottom: 1px solid rgba(0, 168, 255, 0.15);
   padding: 90px 0 110px;
+  overflow: hidden;
+  position: relative;
 }
 
 .bottle-coverflow-swiper {
@@ -1338,51 +1340,163 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Disable heavy GPU-taxing blur filters on mobile */
+  .ambient-glow {
+    display: none !important;
+  }
+
+  body {
+    background-attachment: scroll; /* Fixed backgrounds cause severe frame drops on mobile WebKit/Blink */
+  }
+
   .nav-links {
     display: none;
   }
-  .hero-title {
-    font-size: 38px;
+  
+  .hero-section {
+    padding: 36px 0 50px;
   }
+
+  .hero-title {
+    font-size: 34px;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .hero-stats {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-showcase-frame {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* Keep floating tags fully inside the mobile screen boundary */
   .glass-tag {
-    padding: 8px 12px;
+    padding: 7px 12px;
     font-size: 11px;
+    max-width: 200px;
+  }
+  .tag-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
   }
   .glass-tag-top-right {
-    top: 2%;
-    right: 5px;
+    top: 4%;
+    right: 6px;
   }
   .glass-tag-bottom-left {
-    bottom: 5%;
-    left: 5px;
+    bottom: 6%;
+    left: 6px;
   }
   .glass-tag-bottom-right {
     display: none;
   }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
+
+  .collection-section-wrap {
+    padding: 60px 0 80px;
+  }
+
   .bottle-slide-card {
-    width: 310px !important;
+    width: 290px !important;
+    max-width: 82vw;
   }
+
   .slide-img-box {
-    max-height: 360px;
+    max-height: 320px;
   }
+
+  .slide-title {
+    font-size: 19px;
+  }
+
+  /* Compact Model Picker on Mobile */
   .model-picker-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
+
+  .model-card {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 14px;
+    padding: 10px 14px;
+  }
+
+  .model-thumb-box {
+    width: 65px;
+    height: 75px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    padding: 3px;
+  }
+
+  .model-info strong {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
   .size-picker-grid {
     grid-template-columns: 1fr;
+    gap: 8px;
   }
+
+  .pill-content {
+    padding: 12px 14px;
+  }
+
   .input-duo-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
+
+  .order-form-card {
+    padding: 24px 18px;
+  }
+
+  .order-preview-card {
+    padding: 20px 16px;
+  }
+
+  .order-live-visual {
+    max-height: 340px;
+  }
+
   .trust-banner {
     flex-direction: column;
     text-align: center;
-    padding: 36px 24px;
+    padding: 32px 20px;
+    gap: 20px;
   }
+
+  .trust-content h2 {
+    font-size: 24px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 }

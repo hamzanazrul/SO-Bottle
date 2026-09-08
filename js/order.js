@@ -12,7 +12,7 @@ const BOTTLE_CATALOG = {
     name: 'Blue Hydration Fuel',
     tag: 'HYDRO WAVE',
     basePrice: 220,
-    image: 'assets/images/b1.png',
+    image: 'assets/images/b1.jpg',
     desc: 'ক্রিস্টাল ক্লিয়ার সিলিন্ডার বডি, ওয়েভ টেক্সচার্ড ব্লু লেবেলিং এবং হাই-প্রেশার স্প্ল্যাশ প্রটেক্টেড আইস ব্লু ক্যাপ।'
   },
   b2: {
@@ -20,7 +20,7 @@ const BOTTLE_CATALOG = {
     name: 'Aqua Premium Natural',
     tag: 'ERGONOMIC CURVE',
     basePrice: 250,
-    image: 'assets/images/b2.png',
+    image: 'assets/images/b2.jpg',
     desc: 'প্রাকৃতিক স্প্রিং ওয়াটার থিম, এরগনোমিক গ্রিপ স্পাইরাল কনট্যুর বডি এবং রয়েল ম্যাট ব্ল্যাক প্রফেশনাল ক্যাপ।'
   },
   b3: {
@@ -28,7 +28,7 @@ const BOTTLE_CATALOG = {
     name: 'TOCE Alpine Glacier',
     tag: 'SPARKLING MINERAL',
     basePrice: 280,
-    image: 'assets/images/b3.png',
+    image: 'assets/images/b3.jpg',
     desc: 'আলপাইন গ্লেসিয়ার মাউন্টেন পিক শেপড গ্রেডিয়েন্ট লেবেল, প্রিমিয়াম রিজিড গ্লাস-লাইক ফিনিশ এবং হেভি-ডিউটি ক্যাপ।'
   }
 };

@@ -66,9 +66,10 @@ function initSiteAnimations() {
       ease: 'back.out(1.5)'
     }, '-=0.5');
 
-  // 2. Interactive 3D Card Hover Tilt on Hero Photo
+  // 2. Interactive 3D Card Hover Tilt on Hero Photo (Only on desktop with fine mouse pointer)
+  const isFinePointer = window.matchMedia('(pointer: fine)').matches;
   const heroStage = document.querySelector('.hero-showcase-frame');
-  if (heroStage) {
+  if (heroStage && isFinePointer) {
     heroStage.addEventListener('mousemove', (e) => {
       const rect = heroStage.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
@@ -180,29 +181,31 @@ function initSiteAnimations() {
     );
   }
 
-  // 4. Magnetic Button Micro-interaction
-  const magneticButtons = document.querySelectorAll('.magnetic-btn');
-  magneticButtons.forEach((btn) => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
+  // 4. Magnetic Button Micro-interaction (Only on desktop with fine mouse pointer)
+  if (isFinePointer) {
+    const magneticButtons = document.querySelectorAll('.magnetic-btn');
+    magneticButtons.forEach((btn) => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
 
-      gsap.to(btn, {
-        x: x * 0.25,
-        y: y * 0.25,
-        duration: 0.3,
-        ease: 'power2.out'
+        gsap.to(btn, {
+          x: x * 0.25,
+          y: y * 0.25,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, {
+          x: 0,
+          y: 0,
+          duration: 0.5,
+          ease: 'elastic.out(1, 0.4)'
+        });
       });
     });
-
-    btn.addEventListener('mouseleave', () => {
-      gsap.to(btn, {
-        x: 0,
-        y: 0,
-        duration: 0.5,
-        ease: 'elastic.out(1, 0.4)'
-      });
-    });
-  });
+  }
 }
