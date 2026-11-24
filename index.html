@@ -2,6 +2,7 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/images/so-favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SO Bottol | প্রিমিয়াম ক্রিস্টাল ওয়াটার বোটল ও কাস্টম অর্ডার</title>
   <meta name="description" content="SO Bottol - প্রিমিয়াম পারসোনালাইজড ওয়াটার বোতল। আপনার নিজস্ব নাম ও স্লোগানে কাস্টমাইজড ক্রিস্টাল বোতল। সহজ হোয়াটসঅ্যাপ অর্ডার।" />
@@ -9,15 +10,16 @@
   <!-- Google Fonts: Anek Bangla, Hind Siliguri, Outfit, Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Swiper.js CSS for 3D Coverflow Slider -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/story.css" />
 </head>
 <body>
+<a class="skip-link" href="#hero-section">মূল কনটেন্টে যান</a>
 
   <!-- Ambient Caustic Background Lights -->
   <div class="ambient-glow ambient-glow-1"></div>
@@ -27,18 +29,15 @@
   <header class="site-header">
     <div class="container">
       <nav class="nav-wrapper">
-        <a href="#hero-section" class="brand-logo">
-          <div class="logo-drop">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-            </svg>
-          </div>
+        <a href="#hero-section" class="brand-logo" aria-label="SO Bottol — হোম">
+          <img class="brand-logo-image" src="assets/images/so-logo.webp" alt="" width="184" height="340" decoding="async" />
           <span class="logo-text">SO BOTTOL</span>
         </a>
 
-        <ul class="nav-links">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="মেনু খুলুন">☰</button>
+        <ul class="nav-links" id="primary-navigation">
           <li><a href="#hero-section">হোম</a></li>
-          <li><a href="#features-section">ফিচারসমূহ</a></li>
+          <li><a href="#journey">আমাদের গল্প</a></li>
           <li><a href="#collection-section">বোতল কালেকশন</a></li>
           <li><a href="#order-section">অর্ডার করুন</a></li>
         </ul>
@@ -53,97 +52,79 @@
     </div>
   </header>
 
-  <!-- ================= HERO SECTION WITH b2.png SHOWCASE ================= -->
-  <section id="hero-section" class="hero-section">
-    <div class="container">
-      <div class="hero-grid">
-        
-        <!-- Left Content -->
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span class="hero-badge-pulse"></span>
-            <span>ক্রিস্টাল পিওর হাইড্রো-টেক • ১০০% ফুড গ্রেড BPA-ফ্রি</span>
-          </div>
-
-          <h1 class="hero-title">
-            <span class="title-line">বিশুদ্ধ পানি,</span>
-            <span class="title-line text-gradient">আপনার নিজস্ব পরিচয়ে।</span>
-          </h1>
-
-          <p class="hero-subtitle">
-            প্রাকৃতিক মিনারেল ওয়াটার এবং আপনার নিজস্ব নাম বা স্লোগানে সাজিয়ে নিন প্রিমিয়াম ক্রিস্টাল বোতল। এরগনোমিক গ্রিপ, লিক-প্রুফ ক্যাপ এবং বিভিন্ন সাইজের এক্সক্লুসিভ কালেকশন।
-          </p>
-
-          <div class="hero-actions">
-            <a href="#order-section" class="btn btn-primary btn-lg magnetic-btn">
-              <span>বোতল নির্বাচন ও অর্ডার করুন</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-            </a>
-            <a href="#collection-section" class="btn btn-glass btn-lg magnetic-btn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-              <span>৩ডি স্লাইডার দেখুন</span>
-            </a>
-          </div>
-
-          <div class="hero-stats">
-            <div class="stat-box">
-              <h4>১০০%</h4>
-              <p>ফুড গ্রেড BPA-ফ্রি</p>
-            </div>
-            <div class="stat-box">
-              <h4>pH ৭.৮+</h4>
-              <p>অ্যালকালাইন পিউরিটি</p>
-            </div>
-            <div class="stat-box">
-              <h4>01884276242</h4>
-              <p>হোয়াটসঅ্যাপ হেল্পলাইন</p>
-            </div>
-          </div>
+  <main>
+  <section id="hero-section" class="story-intro">
+    <div class="container intro-grid">
+      <div class="intro-copy">
+        <p class="story-eyebrow">SO BOTTOL — THE EVERYDAY, REIMAGINED</p>
+        <h1>এক ফোঁটা থেকে<br><span>আপনার গল্প।</span></h1>
+        <p class="intro-description">শুধু পানির বোতল নয়। বিশুদ্ধতার শুরু থেকে আপনার নামের শেষ ছোঁয়া—প্রতিদিনের সঙ্গী হয়ে ওঠার একটি গল্প।</p>
+        <div class="intro-actions">
+          <a class="btn btn-primary" href="#journey">গল্পের শুরু <span aria-hidden="true">↓</span></a>
+          <a class="intro-link" href="#order-section">সরাসরি অর্ডার করুন <span aria-hidden="true">↗</span></a>
         </div>
+        <div class="intro-bottom"><span class="intro-rule"></span><span>PURE WATER. PERSONAL EXPRESSION.</span></div>
+      </div>
+      <div class="intro-art">
+        <span class="intro-orbit orbit-one" aria-hidden="true"></span><span class="intro-orbit orbit-two" aria-hidden="true"></span>
+        <span class="intro-art-word" aria-hidden="true">PURE.</span>
+        <figure class="intro-photo"><img src="assets/images/so-pure-main.jpeg" width="1254" height="1254" fetchpriority="high" decoding="async" alt="So Pure — আমাদের মূল বোতল, কালো ক্যাপ ও আসল লেবেলসহ" /></figure>
+        <span class="intro-caption"><span aria-hidden="true">01 /</span> DESIGNED FOR YOUR EVERYDAY</span>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#journey"><span class="scroll-cue-line" aria-hidden="true"></span>স্ক্রল করুন, গল্পটি খুলে যাক</a>
+  </section>
 
-        <!-- Right Hero Visual Showcasing b2.png with Ultra-Glossy Glass Frame & Spec Tags -->
-        <div class="hero-bottle-stage">
-          <div class="hero-showcase-frame">
-            <div class="showcase-glow-ring"></div>
-            
-            <!-- Main Hero Image (b2.png) -->
-            <div class="hero-photo-wrapper">
-              <img src="assets/images/b2.jpg" alt="SO Bottol - Aqua Premium Natural" class="hero-photo" width="1024" height="1536" loading="eager" />
-              <div class="photo-ambient-vignette"></div>
-            </div>
-
-            <!-- Floating Ultra-Glossy Spec Badges -->
-            <div class="glass-tag glass-tag-top-right">
-              <div class="tag-icon">💧</div>
-              <div class="tag-info">
-                <h5>১০০% পিওর ওয়াটার</h5>
-                <p>ক্রিস্টাল ক্লিয়ার পিউরিটি</p>
-              </div>
-            </div>
-
-            <div class="glass-tag glass-tag-bottom-left">
-              <div class="tag-icon">🌿</div>
-              <div class="tag-info">
-                <h5>ন্যাচারাল স্প্রিং ওয়াটার</h5>
-                <p>pH ৭.৮+ অ্যালকালাইন সমৃদ্ধ</p>
-              </div>
-            </div>
-
-            <div class="glass-tag glass-tag-bottom-right">
-              <div class="tag-icon">💎</div>
-              <div class="tag-info">
-                <h5>এরগনোমিক কার্ভ বডি</h5>
-                <p>প্রিমিয়াম আর্মার ক্যাপ</p>
-              </div>
-            </div>
-
-          </div>
+  <section id="journey" class="journey-section" aria-label="একটি বোতলের গল্প">
+    <div class="container journey-layout">
+      <div class="journey-visual">
+        <div class="journey-stage" aria-hidden="true">
+          <span class="stage-word">PURE</span>
+          <div class="water-rings"><i></i><i></i><i></i></div>
+          <div class="bottle-motion"><img class="journey-product-photo" src="assets/images/so-pure-main.jpeg" alt="" width="1254" height="1254" loading="lazy" decoding="async" /></div>
+          <span class="stage-caption">SO PURE / OUR SIGNATURE BOTTLE</span>
         </div>
-
+        <div id="bottle-label-container" class="personalization-sample" aria-label="কাস্টম লেবেলের ধারণা">
+          <span class="personalization-caption">আপনার লেবেলের ধারণা</span>
+          <span id="label-custom-text">YOUR STORY</span>
+        </div>
+        <nav class="chapter-nav" aria-label="গল্পের অধ্যায়">
+          <a href="#chapter-water" class="is-active"><span>01</span> বিশুদ্ধতা</a>
+          <a href="#chapter-bottle"><span>02</span> নকশা</a>
+          <a href="#chapter-identity"><span>03</span> পরিচয়</a>
+        </nav>
+      </div>
+      <div class="journey-chapters">
+        <article class="story-chapter" id="chapter-water" data-chapter="0">
+          <p class="story-eyebrow">CHAPTER 01 / THE BEGINNING</p>
+          <span class="chapter-number" aria-hidden="true">01</span>
+          <h2>সব গল্পের শুরু<br>একটু <em>বিশুদ্ধতায়।</em></h2>
+          <p>সকালের প্রথম চুমুক। ব্যস্ততার মাঝে ছোট্ট বিরতি। পানির সহজ আনন্দটাই আমাদের গল্পের শুরু।</p>
+          <div class="chapter-detail"><span aria-hidden="true">↳</span> প্রতিদিনের হাইড্রেশনের জন্য</div>
+          <a href="#chapter-bottle" class="chapter-next">পরের অধ্যায়: নকশা <span aria-hidden="true">↓</span></a>
+        </article>
+        <article class="story-chapter" id="chapter-bottle" data-chapter="1">
+          <p class="story-eyebrow">CHAPTER 02 / THE FORM</p>
+          <span class="chapter-number" aria-hidden="true">02</span>
+          <h2>হাতে মানায়।<br>দিনের সঙ্গেও <em>মিশে যায়।</em></h2>
+          <p>পছন্দের আকৃতি, আরামদায়ক গ্রিপ আর প্রয়োজনমতো সাইজ। আপনার ডেস্ক থেকে প্রতিদিনের পথে—একটি পরিচিত সঙ্গী।</p>
+          <div class="chapter-specs"><span>500 ML</span><span>750 ML</span><span>1000 ML</span><span>5000 ML</span></div>
+          <a href="#collection-section" class="chapter-next">সব মডেল দেখুন <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="story-chapter" id="chapter-identity" data-chapter="2">
+          <p class="story-eyebrow">CHAPTER 03 / YOUR SIGNATURE</p>
+          <span class="chapter-number" aria-hidden="true">03</span>
+          <h2>শেষ ছোঁয়াটি<br>শুধুই <em>আপনার।</em></h2>
+          <p>একটি নাম। একটি প্রিয় কথা। নিজের জন্য কিংবা কাউকে উপহার দিতে—সাধারণ একটি বোতলে যোগ করুন আপনার পরিচয়।</p>
+          <label class="story-name-label" for="story-name">আপনার নাম দিয়ে দেখুন</label>
+          <input id="story-name" class="story-name-input" type="text" placeholder="আপনার নাম" maxlength="24" autocomplete="off" aria-describedby="story-preview-note" />
+          <small id="story-preview-note">এটি লেবেলের ধারণামূলক প্রিভিউ। চূড়ান্ত অর্ডারে নামটি যুক্ত হবে।</small>
+          <a href="#order-section" class="btn btn-primary story-order-link">আমার বোতল তৈরি করি <span aria-hidden="true">↗</span></a>
+        </article>
       </div>
     </div>
   </section>
-
+  <div class="story-bridge"><p>বিশুদ্ধতায় শুরু। <span>আপনার পরিচয়ে পূর্ণ।</span></p><a href="#collection-section">এবার আপনার সঙ্গী বেছে নিন <span aria-hidden="true">↓</span></a></div>
   <!-- ================= FEATURES SECTION ================= -->
   <section id="features-section" class="section">
     <div class="container">
@@ -157,25 +138,25 @@
 
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon-wrapper">🛡️</div>
+          <div class="feature-icon-wrapper"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 5 6v6c0 4 7 9 7 9s7-5 7-9V6z"/><path d="m8 12 3 3 5-6"/></svg></div>
           <h3>১০০% BPA ফ্রি ও নিরাপদ</h3>
           <p>ফুড গ্রেড প্রিমিয়াম ক্রিস্টাল ক্লিয়ার প্লাস্টিক, যা কোনো ক্ষতিকর কেমিক্যাল মুক্ত এবং শতভাগ নিরাপদ।</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon-wrapper">🏷️</div>
+          <div class="feature-icon-wrapper"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 5 6v6c0 4 7 9 7 9s7-5 7-9V6z"/><path d="m8 12 3 3 5-6"/></svg></div>
           <h3>কাস্টম নেম ও স্লোগান প্রিন্টিং</h3>
           <p>আপনার নাম, পছন্দের বার্তা বা প্রিয়জনকে গিফট করার জন্য মনের মতো স্লোগান বোতলের গায়ে প্রিন্ট করে নিন।</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon-wrapper">🔒</div>
+          <div class="feature-icon-wrapper"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 5 6v6c0 4 7 9 7 9s7-5 7-9V6z"/><path d="m8 12 3 3 5-6"/></svg></div>
           <h3>লিক-প্রুফ আর্মার ক্যাপ</h3>
           <p>ডাবল সিলিং সিলিকন গ্রিপ রিং টেকনোলজি, যা ব্যাগ বা গাড়িতে রাখলে এক ফোঁটা পানিও পড়বে না।</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon-wrapper">⚡</div>
+          <div class="feature-icon-wrapper"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 5 6v6c0 4 7 9 7 9s7-5 7-9V6z"/><path d="m8 12 3 3 5-6"/></svg></div>
           <h3>হোয়াটসঅ্যাপে সহজ অর্ডার</h3>
           <p>এক ক্লিকেই সরাসরি প্রস্তুতকারকের কাছে অর্ডার পাঠান এবং দ্রুত সারা দেশে ডেলিভারি বুঝে নিন।</p>
         </div>
@@ -190,7 +171,7 @@
         <span class="section-tag">এক্সক্লুসিভ বোটল সিরিজ</span>
         <h2 class="section-title">সিগনেচার প্রিমিয়াম বোতল কালেকশন</h2>
         <p class="section-desc">
-          মাউস দিয়ে ড্র্যাগ করে বা টাচ করে ৩ডি কভারফ্লো স্লাইড শোতে আমাদের বোতলগুলো দেখুন। যেকোনো বোতলের "অর্ডার করুন" বাটনে ক্লিক করে সরাসরি অর্ডার করতে পারেন।
+          তিনটি আলাদা ব্যক্তিত্ব। আপনার পছন্দের মডেলটি বেছে নিন। মোবাইলে সোয়াইপ করুন অথবা নিচের তীর ব্যবহার করুন।
         </p>
       </div>
 
@@ -200,9 +181,9 @@
           
           <!-- Slide 1: Blue Hydration Fuel (b1.png) -->
           <div class="swiper-slide bottle-slide-card" data-bottle-id="b1">
-            <div class="slide-badge">🌊 Hydro Splash</div>
+            <div class="slide-badge">Hydro Splash</div>
             <div class="slide-img-box">
-              <img src="assets/images/b1.jpg" decoding="async" alt="Blue Hydration Fuel" width="1024" height="1536" loading="eager" />
+              <img src="assets/images/b1.jpg" decoding="async" alt="Blue Hydration Fuel" width="1024" height="1536" loading="lazy" />
             </div>
             <div class="slide-body">
               <span class="slide-series-tag">500 ML - 5000 ML • HYDRO WAVE</span>
@@ -214,29 +195,29 @@
                   <span class="slide-price-val">৳ ২২০ <span class="unit">/ কেসিং</span></span>
                 </div>
                 <button type="button" class="btn btn-primary btn-sm btn-select-bottle" onclick="selectBottleForOrder('b1')">
-                  <span>👉 এই বোতলটি অর্ডার করুন</span>
+                  <span>এই বোতলটি অর্ডার করুন</span>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Slide 2: Aqua Premium Natural (b2.png) -->
+          <!-- Slide 2: So Pure Signature (b2.png) -->
           <div class="swiper-slide bottle-slide-card" data-bottle-id="b2">
             <div class="slide-badge">🍃 Nature Spring</div>
             <div class="slide-img-box">
-              <img src="assets/images/b2.jpg" decoding="async" alt="Aqua Premium Natural" width="1024" height="1536" loading="eager" />
+              <img src="assets/images/so-pure-main.jpeg" decoding="async" alt="So Pure Signature" width="1024" height="1536" loading="lazy" />
             </div>
             <div class="slide-body">
               <span class="slide-series-tag">500 ML - 5000 ML • ERGONOMIC CURVE</span>
-              <h3 class="slide-title">Aqua Premium Natural</h3>
-              <p class="slide-desc">প্রাকৃতিক স্প্রিং ওয়াটার থিম, এরগনোমিক গ্রিপ স্পাইরাল কনট্যুর বডি এবং রয়েল ম্যাট ব্ল্যাক প্রফেশনাল ক্যাপ।</p>
+              <h3 class="slide-title">So Pure Signature</h3>
+              <p class="slide-desc">So Pure-এর মূল বোতল—স্বচ্ছ বডি, কালো ক্যাপ এবং সিগনেচার So pure লেবেল।</p>
               <div class="slide-price-row">
                 <div class="slide-price-box">
                   <span class="slide-price-label">প্রারম্ভিক মূল্য (500 ML):</span>
                   <span class="slide-price-val">৳ ২৫০ <span class="unit">/ কেসিং</span></span>
                 </div>
                 <button type="button" class="btn btn-primary btn-sm btn-select-bottle" onclick="selectBottleForOrder('b2')">
-                  <span>👉 এই বোতলটি অর্ডার করুন</span>
+                  <span>এই বোতলটি অর্ডার করুন</span>
                 </button>
               </div>
             </div>
@@ -244,9 +225,9 @@
 
           <!-- Slide 3: TOCE Alpine Glacier (b3.png) -->
           <div class="swiper-slide bottle-slide-card" data-bottle-id="b3">
-            <div class="slide-badge">🏔️ Alpine Glacier</div>
+            <div class="slide-badge">Alpine Glacier</div>
             <div class="slide-img-box">
-              <img src="assets/images/b3.jpg" decoding="async" alt="TOCE Alpine Glacier" width="1024" height="1536" loading="eager" />
+              <img src="assets/images/b3.jpg" decoding="async" alt="TOCE Alpine Glacier" width="1024" height="1536" loading="lazy" />
             </div>
             <div class="slide-body">
               <span class="slide-series-tag">500 ML - 5000 ML • SPARKLING MINERAL</span>
@@ -258,83 +239,18 @@
                   <span class="slide-price-val">৳ ২৮০ <span class="unit">/ কেসিং</span></span>
                 </div>
                 <button type="button" class="btn btn-primary btn-sm btn-select-bottle" onclick="selectBottleForOrder('b3')">
-                  <span>👉 এই বোতলটি অর্ডার করুন</span>
+                  <span>এই বোতলটি অর্ডার করুন</span>
                 </button>
               </div>
             </div>
           </div>
 
           <!-- Slide 4: Blue Hydration Fuel Duplicate (for infinite loop) -->
-          <div class="swiper-slide bottle-slide-card" data-bottle-id="b1">
-            <div class="slide-badge">🌊 Hydro Splash</div>
-            <div class="slide-img-box">
-              <img src="assets/images/b1.jpg" decoding="async" alt="Blue Hydration Fuel" width="1024" height="1536" loading="eager" />
-            </div>
-            <div class="slide-body">
-              <span class="slide-series-tag">500 ML - 5000 ML • HYDRO WAVE</span>
-              <h3 class="slide-title">Blue Hydration Fuel</h3>
-              <p class="slide-desc">ক্রিস্টাল ক্লিয়ার সিলিন্ডার বডি, ওয়েভ টেক্সচার্ড ব্লু লেবেলিং এবং হাই-প্রেশার স্প্ল্যাশ প্রটেক্টেড আইস ব্লু ক্যাপ।</p>
-              <div class="slide-price-row">
-                <div class="slide-price-box">
-                  <span class="slide-price-label">প্রারম্ভিক মূল্য (500 ML):</span>
-                  <span class="slide-price-val">৳ ২২০ <span class="unit">/ কেসিং</span></span>
-                </div>
-                <button type="button" class="btn btn-primary btn-sm btn-select-bottle" onclick="selectBottleForOrder('b1')">
-                  <span>👉 এই বোতলটি অর্ডার করুন</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 5: Aqua Premium Natural Duplicate (for infinite loop) -->
-          <div class="swiper-slide bottle-slide-card" data-bottle-id="b2">
-            <div class="slide-badge">🍃 Nature Spring</div>
-            <div class="slide-img-box">
-              <img src="assets/images/b2.jpg" decoding="async" alt="Aqua Premium Natural" width="1024" height="1536" loading="eager" />
-            </div>
-            <div class="slide-body">
-              <span class="slide-series-tag">500 ML - 5000 ML • ERGONOMIC CURVE</span>
-              <h3 class="slide-title">Aqua Premium Natural</h3>
-              <p class="slide-desc">প্রাকৃতিক স্প্রিং ওয়াটার থিম, এরগনোমিক গ্রিপ স্পাইরাল কনট্যুর বডি এবং রয়েল ম্যাট ব্ল্যাক প্রফেশনাল ক্যাপ।</p>
-              <div class="slide-price-row">
-                <div class="slide-price-box">
-                  <span class="slide-price-label">প্রারম্ভিক মূল্য (500 ML):</span>
-                  <span class="slide-price-val">৳ ২৫০ <span class="unit">/ কেসিং</span></span>
-                </div>
-                <button type="button" class="btn btn-primary btn-sm btn-select-bottle" onclick="selectBottleForOrder('b2')">
-                  <span>👉 এই বোতলটি অর্ডার করুন</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 6: TOCE Alpine Glacier Duplicate (for infinite loop) -->
-          <div class="swiper-slide bottle-slide-card" data-bottle-id="b3">
-            <div class="slide-badge">🏔️ Alpine Glacier</div>
-            <div class="slide-img-box">
-              <img src="assets/images/b3.jpg" decoding="async" alt="TOCE Alpine Glacier" width="1024" height="1536" loading="eager" />
-            </div>
-            <div class="slide-body">
-              <span class="slide-series-tag">500 ML - 5000 ML • SPARKLING MINERAL</span>
-              <h3 class="slide-title">TOCE Alpine Glacier</h3>
-              <p class="slide-desc">আলপাইন গ্লেসিয়ার মাউন্টেন পিক শেপড গ্রেডিয়েন্ট লেবেল, প্রিমিয়াম রিজিড গ্লাস-লাইক ফিনিশ এবং হেভি-ডিউটি ক্যাপ।</p>
-              <div class="slide-price-row">
-                <div class="slide-price-box">
-                  <span class="slide-price-label">প্রারম্ভিক মূল্য (500 ML):</span>
-                  <span class="slide-price-val">৳ ২৮০ <span class="unit">/ কেসিং</span></span>
-                </div>
-                <button type="button" class="btn btn-primary btn-sm btn-select-bottle" onclick="selectBottleForOrder('b3')">
-                  <span>👉 এই বোতলটি অর্ডার করুন</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
         </div>
 
         <!-- Swiper Nav Arrows & Pagination -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <button type="button" class="swiper-button-prev" aria-label="আগের বোতল">←</button>
+        <button type="button" class="swiper-button-next" aria-label="পরের বোতল">→</button>
         <div class="swiper-pagination"></div>
       </div>
     </div>
@@ -345,7 +261,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">সহজ অর্ডার ফরম</span>
-        <h2 class="section-title">আপনার নিজস্ব বোতল অর্ডার করুন</h2>
+        <h2 class="section-title">এবার আপনার গল্পটি তৈরি হোক।</h2>
         <p class="section-desc">
           পছন্দের বোতলের মডেল ও সাইজ নির্বাচন করুন, আপনার নাম বা স্লোগান লিখুন এবং সরাসরি হোয়াটসঅ্যাপে অর্ডার পাঠিয়ে দিন।
         </p>
@@ -362,7 +278,7 @@
 
           <!-- Preview Bottle Visual: Full view, 100% visible without obstruction -->
           <div class="order-live-visual">
-            <img id="preview-bottle-img" src="assets/images/b2.jpg" decoding="async" alt="Selected Bottle Preview" />
+            <img loading="lazy" id="preview-bottle-img" src="assets/images/so-pure-main.jpeg" decoding="async" alt="Selected Bottle Preview" />
           </div>
 
           <!-- Custom Label Badge placed clearly below the bottle image -->
@@ -374,10 +290,10 @@
           </div>
 
           <!-- Dynamic Live Pricing Box -->
-          <div class="price-breakdown-box">
+          <div class="price-breakdown-box" aria-live="polite" aria-atomic="true">
             <div class="breakdown-row">
               <span class="label">নির্বাচিত মডেল:</span>
-              <strong id="summary-model-name" class="val">Aqua Premium Natural</strong>
+              <strong id="summary-model-name" class="val">So Pure Signature</strong>
             </div>
             <div class="breakdown-row">
               <span class="label">নির্বাচিত সাইজ:</span>
@@ -415,7 +331,7 @@
                   <input type="radio" name="order_bottle_model" value="b1" />
                   <div class="model-card">
                     <div class="model-thumb-box">
-                      <img src="assets/images/b1.jpg" decoding="async" alt="Blue Hydration Fuel" />
+                      <img loading="lazy" src="assets/images/b1_thumb.jpg" decoding="async" alt="Blue Hydration Fuel" />
                     </div>
                     <div class="model-info">
                       <strong>Blue Hydration Fuel</strong>
@@ -428,10 +344,10 @@
                   <input type="radio" name="order_bottle_model" value="b2" checked />
                   <div class="model-card">
                     <div class="model-thumb-box">
-                      <img src="assets/images/b2.jpg" decoding="async" alt="Aqua Premium Natural" />
+                      <img loading="lazy" src="assets/images/so-pure-main.jpeg" decoding="async" alt="So Pure Signature" />
                     </div>
                     <div class="model-info">
-                      <strong>Aqua Premium Natural</strong>
+                      <strong>So Pure Signature</strong>
                       <span>বেস: ৳২৫০ (500ml)</span>
                     </div>
                   </div>
@@ -441,7 +357,7 @@
                   <input type="radio" name="order_bottle_model" value="b3" />
                   <div class="model-card">
                     <div class="model-thumb-box">
-                      <img src="assets/images/b3.jpg" decoding="async" alt="TOCE Alpine Glacier" />
+                      <img loading="lazy" src="assets/images/b3_thumb.jpg" decoding="async" alt="TOCE Alpine Glacier" />
                     </div>
                     <div class="model-info">
                       <strong>TOCE Alpine Glacier</strong>
@@ -574,12 +490,13 @@
     </div>
   </section>
 
+  </main>
   <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h4>SO BOTTOL</h4>
+          <a class="footer-logo-link" href="#hero-section" aria-label="SO Bottol — হোম"><img class="footer-logo-image" src="assets/images/so-logo.webp" alt="" width="184" height="340" loading="lazy" decoding="async" /><span>SO BOTTOL</span></a>
           <p>
             বিশুদ্ধ পানি এবং আধুনিক পারসোনালাইজড লাইফস্টাইল। প্রতিটি পানির বোতলে আপনার স্বাতন্ত্র্য এবং রুচিশীলতার অনন্য ছোঁয়া।
           </p>
@@ -606,22 +523,23 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 SO Bottol. All Rights Reserved. Ultra-Glossy Glassmorphism Experience.</p>
+        <p>&copy; 2026 SO Bottol. All Rights Reserved. Made for your everyday.</p>
       </div>
     </div>
   </footer>
 
   <!-- ================= SCRIPTS ================= -->
   <!-- Swiper.js Bundle for 3D Coverflow Slideshow -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   
   <!-- GSAP & ScrollTrigger for Fluid Motion -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
 
   <!-- Application Logic Scripts (Pure Static, No Node.js Required) -->
-  <script src="js/animations.js"></script>
-  <script src="js/order.js"></script>
+  <script defer src="js/animations.js"></script>
+  <script defer src="js/order.js"></script>
+  <script defer src="js/story.js"></script>
 
 </body>
 </html>

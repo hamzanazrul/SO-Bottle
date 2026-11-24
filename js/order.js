@@ -17,11 +17,11 @@ const BOTTLE_CATALOG = {
   },
   b2: {
     id: 'b2',
-    name: 'Aqua Premium Natural',
-    tag: 'ERGONOMIC CURVE',
+    name: 'So Pure Signature',
+    tag: 'SO PURE SIGNATURE',
     basePrice: 250,
-    image: 'assets/images/b2.jpg',
-    desc: 'প্রাকৃতিক স্প্রিং ওয়াটার থিম, এরগনোমিক গ্রিপ স্পাইরাল কনট্যুর বডি এবং রয়েল ম্যাট ব্ল্যাক প্রফেশনাল ক্যাপ।'
+    image: 'assets/images/so-pure-main.jpeg',
+    desc: 'So Pure-এর মূল বোতল—স্বচ্ছ বডি, কালো ক্যাপ এবং সিগনেচার So pure লেবেল।'
   },
   b3: {
     id: 'b3',
@@ -60,33 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
  * 1. Initialize Simple & Smooth Bottle Carousel
  */
 function initCoverflowSlider() {
-  if (typeof Swiper === 'undefined') return;
-
-  window.bottleSwiper = new Swiper('.bottle-coverflow-swiper', {
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    spaceBetween: 28,
-    initialSlide: 1, // Start with b2 (Aqua Premium) centered
-    loop: true,
-    loopAdditionalSlides: 3,
-    speed: 500,
-    grabCursor: true,
-    preventClicks: true,
-    preventClicksPropagation: true,
-    touchRatio: 1,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+  const track = document.querySelector('.bottle-coverflow-swiper .swiper-wrapper');
+  if (!track) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const move = direction => track.scrollBy({left: direction * (track.firstElementChild.getBoundingClientRect().width + 24), behavior: reduced.matches ? 'instant' : 'smooth'});
+  document.querySelector('.swiper-button-next')?.addEventListener('click', () => move(1));
+  document.querySelector('.swiper-button-prev')?.addEventListener('click', () => move(-1));
+  track.setAttribute('tabindex', '0');
+  track.setAttribute('aria-label', 'বোতল কালেকশন');
+  track.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1);
+    }
   });
 }
 
@@ -104,7 +89,7 @@ function selectBottleForOrder(bottleId) {
 
   const orderSection = document.getElementById('order-section');
   if (orderSection) {
-    orderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    orderSection.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
   }
 }
 
@@ -204,10 +189,10 @@ function updateLiveOrderCalculations() {
 
   // 1. Update Preview Image
   const previewImg = document.getElementById('preview-bottle-img');
-  if (previewImg && previewImg.src !== bottle.image) {
+  if (previewImg && previewImg.getAttribute('src') !== bottle.image) {
     previewImg.src = bottle.image;
-    if (window.gsap) {
-      gsap.fromTo(previewImg, { scale: 0.94, opacity: 0.7 }, { scale: 1, opacity: 1, duration: 0.4, ease: 'power2.out' });
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      previewImg.animate([{opacity:.65}, {opacity:1}], {duration:220, easing:'ease-out'});
     }
   }
 
