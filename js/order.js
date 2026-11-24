@@ -1,9 +1,9 @@
 /**
- * SO BOTTOL - Pure Static Swiper 3D Coverflow & Multi-Size Dynamic Price Engine
- * Target WhatsApp: 01884276242 (+8801884276242)
+ * SO Pure - Pure Static Swiper 3D Coverflow & Multi-Size Dynamic Price Engine
+ * Target WhatsApp: +8801333503091 / +8801578387348
  */
 
-const WHATSAPP_NUMBER = "8801884276242";
+const WHATSAPP_NUMBERS = ["8801333503091", "8801578387348"];
 
 // Bottle Catalog with Specs & Base Prices (500 ML)
 const BOTTLE_CATALOG = {
@@ -18,7 +18,7 @@ const BOTTLE_CATALOG = {
   b2: {
     id: 'b2',
     name: 'So Pure Signature',
-    tag: 'SO PURE SIGNATURE',
+    tag: 'SO Pure SIGNATURE',
     basePrice: 250,
     image: 'assets/images/so-pure-main.jpeg',
     desc: 'So Pure-এর মূল বোতল—স্বচ্ছ বডি, কালো ক্যাপ এবং সিগনেচার So pure লেবেল।'
@@ -274,7 +274,7 @@ function handleDirectOrderSubmit(e) {
 
   // Format High-End Structured WhatsApp Message
   const message = 
-`💧 *নতুন অর্ডার রিকোয়েস্ট - SO BOTTOL* 💧
+`💧 *নতুন অর্ডার রিকোয়েস্ট - SO Pure* 💧
 ═════════════════════════
 👤 *গ্রাহকের বিবরণ:*
 • নাম: ${custName}
@@ -295,11 +295,13 @@ function handleDirectOrderSubmit(e) {
 
 ═════════════════════════
 📅 অর্ডারের সময়: ${formattedDate}
-🚀 *SO Bottol* | Pure Hydration, Custom Identity`;
+🚀 *SO Pure* | Pure Hydration, Custom Identity`;
 
   // Encode URL & Open WhatsApp
   const encodedText = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
+  const selectedNumber = document.getElementById('order-whatsapp-number')?.value;
+  const whatsappNumber = WHATSAPP_NUMBERS.includes(selectedNumber) ? selectedNumber : WHATSAPP_NUMBERS[0];
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
 
   window.open(whatsappUrl, '_blank');
 }

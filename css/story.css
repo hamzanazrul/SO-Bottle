@@ -110,3 +110,23 @@
  .bottle-slide-card[data-bottle-id="b2"] .slide-img-box {min-height:0}
 }
 @media(max-height:620px) and (max-width:768px) {.journey-stage {height:240px}.story-chapter,.story-name-input {scroll-margin-top:96px}}
+
+/* Contact choice and a compact, static product section on phones. */
+.whatsapp-contact-options {display:flex;flex-direction:column;gap:12px;flex-shrink:0}
+.whatsapp-recipient-field {margin-bottom:20px}
+.mobile-product-label {display:none}
+@media(max-width:768px) {
+ .desktop-story-label {display:none}.mobile-product-label {display:inline}
+ .journey-visual {position:static;top:auto;margin:0;padding:24px 0 0;border:0;background:transparent}
+ .journey-stage {height:auto;aspect-ratio:1;max-height:none;min-height:0}
+ .bottle-motion {transform:none!important}
+ .chapter-nav,.scroll-cue,.story-progress,.story-bridge,#chapter-water,#chapter-bottle {display:none}
+ .journey-chapters {display:block}
+ .story-chapter {min-height:0;padding:28px 0 36px;scroll-margin-top:96px}
+ .story-chapter .story-eyebrow,.chapter-number {display:none}
+ .story-name-input {scroll-margin-top:100px}
+ .intro-ready .intro-copy,.intro-ready .intro-photo,.reveal-enter {animation:none!important}
+ .intro-photo {transform:none}
+ .whatsapp-contact-options {width:100%}
+ .whatsapp-contact-options .btn {width:100%}
+}

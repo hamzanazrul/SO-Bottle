@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function render() {
     frame = 0;
     if (document.hidden || !geometry) return;
+    if (!desktop.matches) {
+      bottle.style.removeProperty('transform'); rings.style.removeProperty('transform');
+      label.style.opacity = '1'; word.textContent = 'SO Pure';
+      progress.style.transform = 'scaleX(0)';
+      return;
+    }
     const y = scrollY;
     progress.style.transform = `scaleX(${clamp(y / geometry.maxScroll)})`;
     const focusLine = y + innerHeight * (desktop.matches ? .52 : .66);
@@ -65,15 +71,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   function schedule() {if (!frame && !document.hidden) frame = requestAnimationFrame(render);}
-  addEventListener('scroll', schedule, {passive:true});
+  function configureStory() {
+    active = -1;
+    removeEventListener('scroll', schedule);
+    if (desktop.matches) addEventListener('scroll', schedule, {passive:true});
+    intro.classList.toggle('intro-ready', desktop.matches && !motion.matches);
+    measure();
+  }
   addEventListener('resize', measure, {passive:true});
   addEventListener('pageshow', measure);
   document.addEventListener('visibilitychange', schedule);
   motion.addEventListener('change', () => {intro.classList.remove('intro-ready');measure();});
-  desktop.addEventListener('change', measure);
+  desktop.addEventListener('change', configureStory);
   document.fonts?.ready.then(measure);
   document.querySelectorAll('img').forEach(image => {if (!image.complete) image.addEventListener('load', measure, {once:true});});
-  if (!motion.matches) intro.classList.add('intro-ready');
+  configureStory();
   const storyName = document.querySelector('#story-name');
   const orderName = document.querySelector('#order-label-name');
   const text = document.querySelector('#label-custom-text');
@@ -94,3 +106,4 @@ document.addEventListener('DOMContentLoaded', () => {
   updateName(storyName.value);
   measure();
 });
+
